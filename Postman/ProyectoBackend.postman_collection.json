@@ -1,0 +1,2613 @@
+{
+	"info": {
+		"_postman_id": "5f0c3927-c86f-45ae-943c-248661d85a10",
+		"name": "ProyectoBackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47633662"
+	},
+	"item": [
+		{
+			"name": "ControllerAsistencia",
+			"item": [
+				{
+					"name": "SIn DTOs",
+					"item": [
+						{
+							"name": "GetAllAsistencia",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAsistenciaId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAsistencia",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteAsistencia",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con DTOs",
+					"item": [
+						{
+							"name": "GetAllAsistenciaDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAsistenciaIdDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/dto/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"dto",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAsistenciaDto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RegistrarAsistenciaDto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"usuarioId\": 1,\n        \"horarioId\": 2,\n        \"fechaAsistencia\": \"2024-01-03\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/dto/RegistrarAsistencia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"dto",
+										"RegistrarAsistencia"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteAsistenciaDto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con Mapper",
+					"item": [
+						{
+							"name": "GetAllAsistenciaDtoMapper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAsistenciaIdDtoMapper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/dto/mapper/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"dto",
+										"mapper",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAsistenciaDtoMapper",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RegistrarAsistenciaDtoMapper",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"usuarioId\": 1,\n        \"horarioId\": 2,\n        \"fechaAsistencia\": \"2024-01-12\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/dto/mapper/RegistrarAsistencia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"dto",
+										"mapper",
+										"RegistrarAsistencia"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "RegistrarAsistenciaDtoMapper",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"usuarioId\": 2,\n        \"horarioId\": 3,\n        \"fechaAsistencia\": \"2025-10-10\"\n    }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:5136/api/asistencium/dto/mapper/RegistrarAsistencia",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5136",
+											"path": [
+												"api",
+												"asistencium",
+												"dto",
+												"mapper",
+												"RegistrarAsistencia"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "",
+									"header": [
+										{
+											"key": "Content-Length",
+											"value": "976"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 17 Oct 2025 05:23:39 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"usuarioId\": 2,\n        \"horarioId\": 3,\n        \"fechaAsistencia\": \"2025-10-10\",\n        \"estado\": \"Presente\",\n        \"horario\": {\n            \"id\": 3,\n            \"claseId\": 1,\n            \"diaSemana\": \"Viernes\",\n            \"horaInicio\": \"18:00:00\",\n            \"horaFin\": \"19:00:00\",\n            \"sala\": \"Sala A\",\n            \"isActive\": 1,\n            \"asistencia\": [],\n            \"clase\": {\n                \"id\": 1,\n                \"descripcion\": \"Boxeo Principiantes\",\n                \"instructorId\": 1,\n                \"capacidadMaxima\": 20,\n                \"duracionMinutos\": 60,\n                \"nivel\": \"Principiante\",\n                \"isActive\": 1,\n                \"horarios\": [],\n                \"instructor\": {\n                    \"id\": 1,\n                    \"nombre\": \"Sergio Gómez\",\n                    \"especialidad\": \"Boxeo\",\n                    \"telefono\": \"11-1234-5678\",\n                    \"isActive\": 1,\n                    \"clases\": []\n                }\n            }\n        },\n        \"usuario\": {\n            \"id\": 2,\n            \"nombre\": \"Rafael Cenzano\",\n            \"edad\": 25,\n            \"telefono\": \"11-2222-2222\",\n            \"isActive\": 1,\n            \"asistencia\": [],\n            \"usuarioMembresia\": [\n                {\n                    \"id\": 2,\n                    \"usuarioId\": 2,\n                    \"membresiaId\": 3,\n                    \"fechaInicio\": \"2024-01-01\",\n                    \"fechaFin\": \"2026-12-31\",\n                    \"clasesRestantes\": 998,\n                    \"estado\": \"Activa\",\n                    \"precioPagado\": 7000,\n                    \"metodoPago\": \"Tarjeta\",\n                    \"membresia\": {\n                        \"id\": 3,\n                        \"descripcion\": \"Clases Infinitas\",\n                        \"precio\": 7000,\n                        \"duracionDias\": 365,\n                        \"clasesIncluidas\": 999,\n                        \"isActive\": 1,\n                        \"usuarioMembresia\": []\n                    }\n                }\n            ]\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "DeleteAsistenciaDtoMapper",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"10"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetAsistenciaByClase",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/api/asistencium/GetAsistenciaByClase/2/1/2024-01-16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"api",
+								"asistencium",
+								"GetAsistenciaByClase",
+								"2",
+								"1",
+								"2024-01-16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAsistenciaByIdUsuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/api/asistencium/GetAsistenciaByIdUsuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"api",
+								"asistencium",
+								"GetAsistenciaByIdUsuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ControllerClase",
+			"item": [
+				{
+					"name": "SIn DTOs",
+					"item": [
+						{
+							"name": "GetAllClase",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/clase",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetClaseId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/clase/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostClase",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 10,\n    \"descripcion\": \"Boxeo Principiantes\",\n    \"instructorId\": 1,\n    \"capacidadMaxima\": 20,\n    \"duracionMinutos\": 60,\n    \"nivel\": \"Principiante\",\n    \"isActive\": 1,\n    \"horarios\": [],\n    \"instructor\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/clase",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateClase",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"descripcion\": \"Boxeo Principiantes\",\n    \"instructorId\": 1,\n    \"capacidadMaxima\": 20,\n    \"duracionMinutos\": 60,\n    \"nivel\": \"Principiante e Intermedio\",\n    \"isActive\": 1,\n    \"horarios\": [],\n    \"instructor\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteClase",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/clase/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con DTOs",
+					"item": [
+						{
+							"name": "GetAllClaseDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/clase/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetClaseIdDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/clase/dto/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"dto",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateClaseDto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n    \"id\": 1,\n    \"descripcion\": \"Boxeo intermedios\",\n    \"instructorId\": 2,\n    \"capacidadMaxima\": 25\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/clase/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RegistrarClaseDto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n    \"id\": 10,\n    \"descripcion\": \"Boxeo Recreativo\",\n    \"instructorId\": 1,\n    \"capacidadMaxima\": 15\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/clase/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteClaseDto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/asistencium/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"asistencium",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con Mapper",
+					"item": [
+						{
+							"name": "GetAllClaseDtoMapper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/clase/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetClaseIdDtoMapper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/clase/dto/mapper/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"dto",
+										"mapper",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateClaseDtoMapper",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n    \"id\": 1,\n    \"descripcion\": \"Boxeo Intermedio\",\n    \"instructorId\": 2,\n    \"capacidadMaxima\": 25\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/clase/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RegistrarClaseDtoMapper",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n    \"id\": 10,\n    \"descripcion\": \"Boxeo Recreativo\",\n    \"instructorId\": 1,\n    \"capacidadMaxima\": 15\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/clase/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteClaseDtoMapper",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/clase/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"clase",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetClaseByInstructorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/api/clase/instructor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"api",
+								"clase",
+								"instructor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ControllerHorario",
+			"item": [
+				{
+					"name": "SIn DTOs",
+					"item": [
+						{
+							"name": "GetAllHorario",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/horario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetHorarioId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/horario/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteHorario",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/horario/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con DTOs",
+					"item": [
+						{
+							"name": "GetAllHorarioDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/horario/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetHorarioIdDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/horario/dto/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"dto",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateHorarioDto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"claseId\": 1,\n    \"diaSemana\": \"Lunes\",\n    \"horaInicio\": \"18:00:00\",\n    \"horaFin\": \"19:30:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/horario/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RegistrarHorarioDto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 8,\n    \"claseId\": 2,\n    \"diaSemana\": \"Sabado\",\n    \"horaInicio\": \"18:00:00\",\n    \"horaFin\": \"19:30:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/horario/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteHorarioDto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/horario/8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con Mapper",
+					"item": [
+						{
+							"name": "GetAllHorarioDtoMapper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/horario/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetHorarioIdDtoMapper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/horario/dto/mapper/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"dto",
+										"mapper",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateHorarioDtoMapper",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"claseId\": 1,\n    \"diaSemana\": \"Lunes\",\n    \"horaInicio\": \"18:00:00\",\n    \"horaFin\": \"19:30:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/horario/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RegistrarHorarioDtoMapper",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 9,\n    \"claseId\": 2,\n    \"diaSemana\": \"Sabado\",\n    \"horaInicio\": \"18:00:00\",\n    \"horaFin\": \"20:30:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/horario/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteHorarioDtoMapper",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/horario/8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"horario",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetHorarioByClaseId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/api/horario/clase/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"api",
+								"horario",
+								"clase",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ControllerMembresia",
+			"item": [
+				{
+					"name": "SIn DTOs",
+					"item": [
+						{
+							"name": "GetAllMembresia",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/membresia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetMembresiaId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostMembresia",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 4,\n    \"descripcion\": \"Acceso al sparring\",\n    \"precio\": 50.00,\n    \"duracionDias\": 15,\n    \"clasesIncluidas\": 0,\n    \"isActive\": 1,\n    \"usuarioMembresia\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/membresia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateMembresia",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 4,\n    \"descripcion\": \"Acceso a sparring\",\n    \"precio\": 50.00,\n    \"duracionDias\": 15,\n    \"clasesIncluidas\": 0,\n    \"isActive\": 1,\n    \"usuarioMembresia\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/membresia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteAsistencia",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con DTOs",
+					"item": [
+						{
+							"name": "GetAllMembresiaDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetMembresiaIdDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/dto/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"dto",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateMembresiaDto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"descripcion\": \"Acceso 1 mes al gimnasio\",\n    \"precio\": 200.00,\n    \"duracionDias\": 30,\n    \"clasesIncluidas\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RegistrarMembresiaDto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 5,\n    \"descripcion\": \"Acceso 2 meses\",\n    \"precio\": 350.00,\n    \"duracionDias\": 60,\n    \"clasesIncluidas\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteMembresiaDto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con Mapper",
+					"item": [
+						{
+							"name": "GetAllMembresiaDtoMapper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetMembresiaIdDtoMapper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/dto/mapper/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"dto",
+										"mapper",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateMembresiaDtoMapper",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"descripcion\": \"Acceso 2 meses\",\n    \"precio\": 355.00,\n    \"duracionDias\": 60,\n    \"clasesIncluidas\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RegistrarMembresiaDtoMapper",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 6,\n    \"descripcion\": \"Acceso 3 meses\",\n    \"precio\": 450.00,\n    \"duracionDias\": 90,\n    \"clasesIncluidas\": 90\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteMembresiaDtoMapper",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/membresia/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresia",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ControllerUsuarioMembresia",
+			"item": [
+				{
+					"name": "SIn DTOs",
+					"item": [
+						{
+							"name": "GetAllUsuarioMembresia",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUsuarioMembresiaId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostUsuarioMembresia",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 4,\n    \"descripcion\": \"Acceso al sparring\",\n    \"precio\": 50.00,\n    \"duracionDias\": 15,\n    \"clasesIncluidas\": 0,\n    \"isActive\": 1,\n    \"usuarioMembresia\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/membresiausuario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"membresiausuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateUsuarioMembresia",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 4,\n    \"descripcion\": \"Acceso a sparring\",\n    \"precio\": 50.00,\n    \"duracionDias\": 15,\n    \"clasesIncluidas\": 0,\n    \"isActive\": 1,\n    \"usuarioMembresia\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUsuarioMembresia",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con DTOs",
+					"item": [
+						{
+							"name": "GetAllUsuarioMembresiaDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUsuarioMembresiaIdDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/dto/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"dto",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateUsuarioMembresiaDto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2,\n    \"usuarioId\": 2,\n    \"membresiaId\": 3,\n    \"fechaInicio\": \"2024-01-02\",\n    \"fechaFin\": \"2024-12-31\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RegistrarUsuarioMembresiaDto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":10,\n    \"usuarioId\": 2,\n    \"membresiaId\": 3,\n    \"fechaInicio\": \"2024-01-02\",\n    \"fechaFin\": \"2024-12-31\",\n    \"preciopagado\": 250.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUsuarioMembresiaDto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con Mapper",
+					"item": [
+						{
+							"name": "GetAllUsuarioMembresiaDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUsuarioMembresiaIdDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/dto/mapper/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"dto",
+										"mapper",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateUsuarioMembresiaDto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2,\n    \"usuarioId\": 2,\n    \"membresiaId\": 3,\n    \"fechaInicio\": \"2024-01-02\",\n    \"fechaFin\": \"2024-12-31\",\n    \"metodoPago\": \"efectivo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RegistrarUsuarioMembresiaDto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":15,\n    \"usuarioId\": 1,\n    \"membresiaId\": 1,\n    \"fechaInicio\": \"2024-01-02\",\n    \"fechaFin\": \"2024-12-31\",\n    \"preciopagado\": 250.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUsuarioMembresiaDto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 3,\n        \"usuarioId\": 1,\n        \"horarioId\": 1,\n        \"fechaAsistencia\": \"2024-01-01\",\n        \"estado\": \"Presente\",\n        \"horario\": null,\n        \"usuario\": null\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuariomembresia/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuariomembresia",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetAllUsuarioMembresiaActiva CORREGIR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/api/asistencium/dto/usuariomembresia/3/tiene-membresia-activa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"api",
+								"asistencium",
+								"dto",
+								"usuariomembresia",
+								"3",
+								"tiene-membresia-activa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ControllerUsuario",
+			"item": [
+				{
+					"name": "Sin DTOs",
+					"item": [
+						{
+							"name": "GetAllUsuarios",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUsuarioId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "InsertUsuario",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 4,\n    \"nombre\": \"Axel Bellido\",\n    \"edad\": 22,\n    \"telefono\": \"11-1111-1111\",\n    \"isActive\": 0,\n    \"asistencia\": [],\n    \"usuarioMembresia\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateUsuario",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 4,\n    \"nombre\": \"Axel Bellido\",\n    \"edad\": 22,\n    \"telefono\": \"11-1111-1111\",\n    \"isActive\": 0,\n    \"asistencia\": [],\n    \"usuarioMembresia\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUsuario",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con DTOs",
+					"item": [
+						{
+							"name": "GetAllUsuariosDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUsuariosIdDto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/dto/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"dto",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostUsuariosIdDto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 5,\n    \"nombre\": \"Sebastian Lara\",\n    \"edad\": 22,\n    \"telefono\": \"11-1111-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateUsuariosIdDto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 5,\n    \"nombre\": \"Sebastian Lara\",\n    \"edad\": 20,\n    \"telefono\": \"11-1111-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/dto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"dto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUsuariosIdDto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 5,\n    \"nombre\": \"Sebastian Lara\",\n    \"edad\": 20,\n    \"telefono\": \"11-1111-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/dto/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"dto",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Con Mapper",
+					"item": [
+						{
+							"name": "GetAllUsuariosDtoMapper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUsuariosIdDtoMapper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/dto/mapper/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"dto",
+										"mapper",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PostUsuariosIdDtoMapper",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 12,\n    \"nombre\": \"Rodrigo Antezana\",\n    \"edad\": 22,\n    \"telefono\": \"11-1111-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateUsuariosIdDtoMapper",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 5,\n    \"nombre\": \"Sebastian Lara\",\n    \"edad\": 39,\n    \"telefono\": \"11-1111-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/dto/mapper",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"dto",
+										"mapper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUsuariosIdDtoMapper",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 5,\n    \"nombre\": \"Sebastian Lara\",\n    \"edad\": 20,\n    \"telefono\": \"11-1111-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5136/api/usuarios/dto/mapper/12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5136",
+									"path": [
+										"api",
+										"usuarios",
+										"dto",
+										"mapper",
+										"12"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetUsuarioActivos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/api/usuarios/activos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"api",
+								"usuarios",
+								"activos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

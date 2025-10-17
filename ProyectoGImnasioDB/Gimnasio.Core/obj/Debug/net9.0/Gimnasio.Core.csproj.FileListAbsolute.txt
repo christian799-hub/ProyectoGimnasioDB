@@ -1,0 +1,11 @@
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/bin/Debug/net9.0/Gimnasio.Core.deps.json
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/bin/Debug/net9.0/Gimnasio.Core.dll
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/bin/Debug/net9.0/Gimnasio.Core.pdb
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/obj/Debug/net9.0/Gimnasio.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/obj/Debug/net9.0/Gimnasio.Core.AssemblyInfoInputs.cache
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/obj/Debug/net9.0/Gimnasio.Core.AssemblyInfo.cs
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/obj/Debug/net9.0/Gimnasio.Core.csproj.CoreCompileInputs.cache
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/obj/Debug/net9.0/Gimnasio.Core.dll
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/obj/Debug/net9.0/refint/Gimnasio.Core.dll
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/obj/Debug/net9.0/Gimnasio.Core.pdb
+/Users/christianferrufinomorales/Desktop/TECWEB/ProyectoBackend/Gimnasio.Core/obj/Debug/net9.0/ref/Gimnasio.Core.dll
