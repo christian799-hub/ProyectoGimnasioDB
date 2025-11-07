@@ -1,0 +1,511 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gimnasio.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Gimnasio.Api.Controllers.AsistenciumController.GetAsistenciaDtoMapper(Gimnasio.Core.QueryFilters.AsistenciaQueryFilter)">
+            <summary>
+            Recupera una lista paginada de asistencias y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de asistencias con soporte para paginación y mapeo automático a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="asistenciaQueryFilter">Los filtros se aplicacn al recuperar las asistencias como la paginacion y busqueda, si no se envia los paramtetros se retornan todos los registros</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.AsistenciumController.GetAllAsistenciasDapperDtoMapper">
+            <summary>
+            Recupera una lista de asistencias utilizando Dapper y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de asistencias utilizando Dapper para la consulta de datos y mapearlos automáticamente a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.AsistenciumController.GetAsistenciaByIdUsuarioDtoMapper(System.Int32)">
+            <summary>
+            Recupera una asistencia por su ID.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una asistencia específica utilizando su ID. Se realiza la validación del ID antes de la recuperación.
+            </remarks>
+            <param name="id"> Id de la asistencia buscada</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.AsistenciumController.RegistrarAsistenciaDtoMapper(Gimnasio.Core.DTOs.AsistenciaDto)">
+            <summary>
+            Registra una nueva asistencia utilizando un DTO y mapeo con AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite registrar una nueva asistencia utilizando un objeto DTO (Data Transfer Object) y mapeándolo automáticamente a la entidad correspondiente utilizando la biblioteca AutoMapper. Además, se realiza la validación del DTO antes de la inserción, 
+            en el cual se tienen que cumplir las siguientes reglas: la Fecha de Asistencia es obligatoria, las id de usuario y horario tiene que ser validas y mayores a 1,
+            , para registrar un usuario a la asistencia el usuario debe estar activo (IsActive = 1), el usuario no se puede registrar dos veces a la misma clase en el mismo horario,
+            se verifica si la clase ya excedio la capacidad maxima, verifica si la membresia del usuario esta activa osea que si es valida comparando la fecha de la asistencia con la fecha de vencimiento de la membresia del usuario,
+            verifica si en la membresia tiene clases y cuando lo registra lo pone en default como presente.
+            </remarks>
+            <param name="registrarAsistenciaDto">Registrar asistencia</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.AsistenciumController.UpdateAsistenciaDtoMapper(Gimnasio.Core.DTOs.AsistenciaDto)">
+            <summary>
+            Actualiza una asistencia existente utilizando un DTO y mapeo con AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite actualizar una asistencia existente utilizando un objeto DTO (Data Transfer Object) y mapeándolo automáticamente a la entidad correspondiente utilizando la biblioteca AutoMapper. Además, se realiza la validación del DTO antes de la actualización.
+            </remarks>
+            <param name="asistenciaDto">Actualizar asistencia</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.AsistenciumController.DeleteAsistenciaDtoMapper(System.Int32)">
+            <summary>
+            Elimina una asistencia por su ID.
+            </summary>
+            <remarks>
+            Este endpoint permite eliminar una asistencia específica utilizando su ID.
+            </remarks>
+            <param name="id">Id de la asistencia a borrar</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.AsistenciumController.GetAsistenciaByClase(System.Int32,System.Int32,System.DateOnly)">
+            <summary>
+            Recupera las asistencias por clase, horario y fecha.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener las asistencias registradas para una clase específica en un horario y fecha determinados.
+            </remarks>
+            <param name="claseId">Id de la clase</param>
+            <param name="horario">Id de el horario</param>
+            <param name="fecha">Fecha en el siguiente formato (YY/MM/DD)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.AsistenciumController.UsuarioYaRegistroAsistencia(System.Int32,System.Int32,System.DateOnly)">
+            <summary>
+            Verifica si un usuario ya registró su asistencia para un horario y fecha específicos.
+            </summary>
+            <remarks>
+            Este endpoint permite verificar si un usuario ya ha registrado su asistencia para un horario y fecha específicos.
+            </remarks>
+            <param name="usuarioId">Id del usuario</param>
+            <param name="horarioId">Id del horario</param>
+            <param name="fecha">Fecha en el siguiente formato (YY/MM/DD)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.AsistenciumController.GetAsistenciaUsuario(System.Int32)">
+            <summary>
+            Recupera las asistencias por ID de usuario.
+            </summary>
+            <remarks>   
+            Este endpoint permite obtener las asistencias registradas para un usuario específico utilizando su ID.
+            </remarks>
+            <param name="usuarioId">Id del usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.AsistenciumController.GetAsistenciaCompleta">
+            <summary>
+            Recupera la asistencia con todos los datos relevevantes utilizando Dapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener las asistencias con todos los datos relevantes como ser el nombre del usuario, que dia asistio y en que horario, que clase y su fecha de asistencia utilizando Dapper para la consulta de datos.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.ClaseController.GetClasesDtoMapper(Gimnasio.Core.QueryFilters.ClasesQueryFilter)">
+            <summary>
+            Recupera una lista paginada de clases y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de clases con soporte para paginación y mapeo automático a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="claseQueryFilter">Los filtros se aplicacn al recuperar las clases como la paginacion y busqueda, si no se envia los paramtetros se retornan todos los registros</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.ClaseController.GetAllClaseDapperDtoMapper">
+            <summary>
+            Recupera todas las clases utilizando Dapper y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener todas las clases utilizando Dapper y mapearlas automáticamente a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.ClaseController.GetClaseByIdDtoMapper(System.Int32)">
+            <summary>
+            Recupera una clase por su ID.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una clase específica por su ID y mapearla automáticamente a un objeto DTO (Data Transfer Object) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="id">Id de la clase</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.ClaseController.InsertarClaseDtoMapper(Gimnasio.Core.DTOs.ClaseDto)">
+            <summary>
+            Inserta una nueva clase utilizando un DTO y AutoMapper.
+            </summary>
+            <remarks>
+            /// Este endpoint permite insertar una nueva clase en el sistema utilizando un objeto DTO (Data Transfer Object) y mapeándolo automáticamente a la entidad correspondiente utilizando la biblioteca AutoMapper
+            , al insertar el nombre de la clase es obligatorio, el nombre de la clase no puede exceder los 100 caracteres, el InstructorId no debe ser menor a -1, la capacidad máxima debe ser mayor que 40 ni menor a 10,
+            , la duración en minutos debe ser mayor que 0 si se proporciona.
+            </remarks>
+            <param name="claseDto">Insertar clase</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.ClaseController.UpdateClaseDtoMapper(Gimnasio.Core.DTOs.ClaseDto)">
+            <summary>
+            Actualiza una clase existente utilizando un DTO y AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite actualizar una clase existente en el sistema utilizando un objeto DTO (Data Transfer Object) y mapeándolo automáticamente a la entidad correspondiente utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="claseDto">Actulizar clase</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.ClaseController.DeleteClaseDtoMapper(System.Int32)">
+            <summary>
+            Elimina una clase por su ID.
+            </summary>
+            <remarks>
+            Este endpoint permite eliminar una clase específica por su ID.
+            </remarks>
+            <param name="id">Id de la clase a borrar</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.ClaseController.GetClaseByInstructor(System.Int32)">
+            <summary>
+            Recupera una lista de clases impartidas por un instructor específico.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de clases que son impartidas por un instructor específico, identificado por su ID.
+            </remarks>
+            <param name="instructorId">Id del instructor</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.ClaseController.GetClaseInstructor">
+            <summary>
+            Recupera una lista de clases junto con la información de sus instructores utilizando Dapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de clases junto con la información de sus instructores utilizando Dapper para la consulta de datos.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.HorarioController.GetHorariosDtoMapper(Gimnasio.Core.QueryFilters.HorarioQueryFilter)">
+            <summary>
+            Recupera una lista de horarios y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de horarios con soporte para paginación y mapeo automático a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="horarioQueryFilter">Los filtros se aplicacn al recuperar las clases como la paginacion y busqueda, si no se envia los paramtetros se retornan todos los registros</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.HorarioController.GetAllHorariosDapperDtoMapper">
+            <summary>
+            Recupera una lista de horarios utilizando Dapper y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de horarios utilizando Dapper para la consulta de datos y mapearlos automáticamente a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.HorarioController.GetHorarioByIdDtoMapper(System.Int32)">
+            <summary>
+            Recupera un horario por su ID y lo mapea a un DTO utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener un horario específico por su ID y mapearlo automáticamente a un objeto DTO (Data Transfer Object) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="id">Id del horario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.HorarioController.InsertarHorarioDtoMapper(Gimnasio.Core.DTOs.HorarioDto)">
+            <summary>
+            Inserta un nuevo horario a partir de un DTO mapeado con AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite insertar un nuevo horario utilizando un objeto DTO (Data Transfer Object) que se mapea automáticamente a la entidad Horario utilizando la biblioteca AutoMapper, 
+            con las siguientes reglas: El dia de la semana no puede exceder de 20 letras, la hora de inicio y fin es obligatoria, la hora de fin debe ser mayor que la hora de inicio,
+            no se puede asignar un horario a una clase inactiva y no se puede asignar una clase inexistente.
+            </remarks>
+            <param name="horarioDto">Insertar horario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.HorarioController.UpdateHorarioDtoMapper(Gimnasio.Core.DTOs.HorarioDto)">
+            <summary>
+            Actualiza un horario existente utilizando un DTO mapeado con AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite actualizar un horario existente en el sistema utilizando un objeto DTO (Data Transfer Object) que se mapea automáticamente a la entidad Horario utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="horarioDto">Actualizar horario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.HorarioController.DeleteHorarioDtoMapper(System.Int32)">
+            <summary>
+            Elimina un horario por su ID.
+            </summary>
+            <remarks>
+            Este endpoint permite eliminar un horario específico por su ID.
+            </remarks>
+            <param name="id">Id del horario a eliminar</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.HorarioController.GetHorariosByClaseId(System.Int32)">
+            <summary>
+            Recupera una lista de horarios asociados a una clase específica por su ID.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de horarios que están asociados a una clase específica, identificada por su ID.
+            </remarks>
+            <param name="claseId">Id de la clase</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.HorarioController.GetHorariosDisponibilidad">
+            <summary>
+            Recupera una lista de horarios con disponibilidad de clases.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de horarios que tienen las clases ordenadas por dia.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.MembresiaController.GetMembresiasDtoMapper(Gimnasio.Core.QueryFilters.MembresiaQueryFilter)">
+            <summary>
+            Recupera una lista de membresias y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de membresias con soporte para paginación y mapeo automático a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="membresiaQueryFilter">Los filtros se aplicacn al recuperar las clases como la paginacion y busqueda, si no se envia los paramtetros se retornan todos los registros</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.MembresiaController.GetMembresiasDtoMapperDapper">
+            <summary>
+            Recupera una lista de membresias utilizando Dapper y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de membresias utilizando Dapper para la consulta de datos y mapeándolas automáticamente a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.MembresiaController.GetMembresiaByIdDtoMapper(System.Int32)">
+            <summary>
+            Recupera una membresia por su ID y lo mapea a un DTO utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una membresia específica por su ID y mapearlo automáticamente a un objeto DTO (Data Transfer Object) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="id">Id de la membresia</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.MembresiaController.InsertarMembresiaDtoMapper(Gimnasio.Core.DTOs.MembresiaDto)">
+            <summary>
+            Crea una nueva membresia a partir de un DTO utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite crear una nueva membresia a partir de un objeto DTO (Data Transfer Object) utilizando la biblioteca AutoMapper para mapear los datos al modelo de entidad correspondiente, 
+            con las siguientes reglas: el tipo de membresía es obligatorio, el tipo de membresía no puede exceder los 50 caracteres, el precio y duracion tienen que ser mayores a 0,
+            las clases restantes no puede ser negativos.
+            </remarks>
+            <param name="membresiaDto">Insertar membresia</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.MembresiaController.UpdateMembresiaDtoMapper(Gimnasio.Core.DTOs.MembresiaDto)">
+            <summary>
+            Actualiza una membresia existente utilizando un DTO y AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite actualizar una membresia existente utilizando un objeto DTO (Data Transfer Object) y mapeándolo automáticamente a la entidad correspondiente utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="membresiaDto">Actualizar membresia</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.MembresiaController.DeleteMembresiaDtoMapper(System.Int32)">
+            <summary>
+            Elimina una membresia por su ID.
+            </summary>
+            <remarks>
+            Este endpoint permite eliminar una membresia específica por su ID.
+            </remarks>
+            <param name="id">Id de la membresia a eliminar</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.MembresiaController.GetMembresiaOrdenPrecio">
+            <summary>
+            Recupera una lista de membresias ordenadas por precio utilizando Dapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de membresias ordenadas por precio del mas caro al mas barato utilizando Dapper para la consulta de datos.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuarioMembresiaController.GetUsuarioMembresiasDtoMapper(Gimnasio.Core.QueryFilters.UsuarioMembresiaQueryFilter)">
+            <summary>
+            Recupera una lista de UsuarioMembresias y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de UsuarioMembresias con soporte para paginación y mapeo automático a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="UsuarioMembresiaQueryFilter">Los filtros se aplicacn al recuperar las clases como la paginacion y busqueda, si no se envia los paramtetros se retornan todos los registros</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuarioMembresiaController.GetUsuarioMembresiasDapperDtoMapper">
+            <summary>
+            Recupera una lista de UsuarioMembresias utilizando Dapper y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de UsuarioMembresias utilizando Dapper para la consulta de datos y mapearlos automáticamente a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuarioMembresiaController.GetUsuarioMembresiaByIdDtoMapper(System.Int32)">
+            <summary>
+            Recupera una UsuarioMembresia por su ID y lo mapea a un DTO utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una UsuarioMembresia específica por su ID y mapearlo automáticamente a un objeto DTO (Data Transfer Object) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="id">Id del UsuarioMembresia</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuarioMembresiaController.InsertarUsuarioMembresiaDtoMapper(Gimnasio.Core.DTOs.UsuarioMembresiaDto)">
+            <summary>
+            Inserta una nueva UsuarioMembresia a partir de un DTO utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite crear una nueva UsuarioMembresia a partir de un objeto DTO (Data Transfer Object) utilizando la biblioteca AutoMapper, 
+            con las siguientes reglas: los usuarios y membresias no pueden ser 0 y tienen que existir, la fecha de inicio y fin es obligatoria, cada vez que un usuario se vincula con UsuarioMembresia el IsActive cambia a 1.
+            </remarks>
+            <param name="usuarioMembresiaDto">Insertar UsuarioMembresia</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuarioMembresiaController.UpdateUsuarioMembresiaDtoMapper(Gimnasio.Core.DTOs.UsuarioMembresiaDto)">
+            <summary>
+            Actualiza una UsuarioMembresia existente a partir de un DTO utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite actualizar una UsuarioMembresia existente a partir de un objeto DTO (Data Transfer Object) utilizando la biblioteca AutoMapper,
+            </remarks>
+            <param name="usuarioMembresiaDto">Actualizar usuarioMembresia</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuarioMembresiaController.DeleteUsuarioMembresiaDtoMapper(System.Int32)">
+            <summary>
+            Elimina una UsuarioMembresia por su ID.
+            </summary>
+            <remarks>
+            Este endpoint permite eliminar una UsuarioMembresia específica por su ID.
+            </remarks>
+            <param name="id">Id del usuarioMembresia a eliminar</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuarioMembresiaController.UsuarioTieneMembresiaActiva(System.Int32)">
+            <summary>
+            Verifica si un usuario tiene una membresía activa.
+            </summary>
+            <remarks>
+            Este endpoint permite verificar si un usuario específico tiene una membresía activa.
+            </remarks>
+            <param name="usuarioId">Id del usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuarioMembresiaController.GetMembresiaActivaByUsuario(System.Int32)">
+            <summary>
+            Recupera la membresía activa de un usuario por su ID.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener la membresía activa de un usuario específico por su ID.
+            </remarks>
+            <param name="usuarioId">Id usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuarioMembresiaController.GetUsuarioYMembresia">
+            <summary>
+            Recupera una lista de usuarios junto con sus membresías utilizando Dapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de usuarios junto con sus membresías utilizando Dapper para la consulta de datos.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuariosController.GetUsuariosDtoMapper(Gimnasio.Core.QueryFilters.UsuarioQueryFilter)">
+            <summary>
+            Recupera una lista de usuarios y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de usuarios y mapearlos automáticamente a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="usuarioQueryFilter">Los filtros se aplicacn al recuperar las clases como la paginacion y busqueda, si no se envia los paramtetros se retornan todos los registros</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuariosController.GetUsuariosDtoDapper">
+            <summary>
+            Recupera una lista de usuarios utilizando Dapper y las mapea a DTOs utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de usuarios utilizando Dapper para la consulta de datos y mapearlos automáticamente a objetos DTO (Data Transfer Objects) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuariosController.GetUsuarioByIdDtoMapper(System.Int32)">
+            <summary>
+            Recupera un usuario por su ID y lo mapea a un DTO utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener un usuario específico por su ID y mapearlo automáticamente a un objeto DTO (Data Transfer Object) utilizando la biblioteca AutoMapper.
+            </remarks>
+            <param name="id">Id del usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuariosController.InsertarUsuarioDtoMapper(Gimnasio.Core.DTOs.UsuarioDto)">
+            <summary>
+            Inserta un nuevo usuario a partir de un DTO utilizando AutoMapper.
+            </summary>
+            <remarks>
+            /// Este endpoint permite insertar un nuevo usuario en el sistema a partir de un objeto DTO (Data Transfer Object) utilizando la biblioteca AutoMapper para mapear los datos, 
+            con las siguientes reglas: El nombre y el telefono son obligatorios, IsActive es solo 1 o 0, el rango de edad debe estar entre 10 y 100 años.
+            </remarks>
+            <param name="usuarioDto">Insertar Usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuariosController.UpdateUsuarioDtoMapper(Gimnasio.Core.DTOs.UsuarioDto)">
+            <summary>
+            Actualiza un usuario existente a partir de un DTO utilizando AutoMapper.
+            </summary>
+            <remarks>
+            Este endpoint permite actualizar un usuario existente en el sistema a partir de un objeto DTO (Data Transfer Object) utilizando la biblioteca AutoMapper para mapear los datos,
+            </remarks>
+            <param name="usuarioDto">Actualizar usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuariosController.DeleteUsuarioDtoMapper(System.Int32)">
+            <summary>
+            Elimina (desactiva) un usuario existente estableciendo su propiedad IsActive a 0.
+            </summary>
+            <remarks>
+            Este endpoint permite eliminar (desactivar) un usuario existente en el sistema estableciendo su propiedad IsActive a 0 en lugar de eliminar físicamente el registro de la base de datos.
+            </remarks>
+            <param name="id">Id Usuario a borrar</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuariosController.GetUsuariosActivos(Gimnasio.Core.QueryFilters.UsuarioQueryFilter)">
+            <summary>
+            Recupera una lista de usuarios activos (IsActive = 1).
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de usuarios que están activos en el sistema, es decir, aquellos cuyo campo IsActive es igual a 1.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Gimnasio.Api.Controllers.UsuariosController.GetAsistenciasUsuarios">
+            <summary>
+            Recupera una lista de usuarios y su cantidad de asistencias utilizando Dapper.
+            </summary>
+            <remarks>
+            Este endpoint permite obtener una lista de usuarios con su cantidad de asistencias utilizando Dapper para la consulta de datos.
+            </remarks>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
